@@ -22,8 +22,11 @@ import os
 import openpyxl
 from datetime import datetime, date
 from playwright.async_api import async_playwright
+from dotenv import load_dotenv
 
-FOLDER      = "/Users/nevafrazier/Desktop/Shipping Agent"
+load_dotenv()
+
+FOLDER      = os.getenv("SHIPPING_FOLDER", os.path.expanduser("~/Desktop/Shipping Agent"))
 TODAY       = date.today()
 COL_LINK    = 12   # L
 COL_STATUS  = 24   # X
